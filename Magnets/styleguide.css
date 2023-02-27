@@ -1,0 +1,48 @@
+:root { 
+  --black: #000000;
+  --red: #ff0d0d;
+  --white: #ffffff;
+  --white-2: #ffffff80;
+ 
+  --font-size-l: 22px;
+  --font-size-m: 18px;
+  --font-size-s: 14px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 26px;
+  --font-size-xxxl: 28px;
+  --font-size-xxxxl: 42px;
+ 
+  --font-family-nunito_sans: "Nunito Sans", Helvetica;
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.poppins-bold-white-18px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.nunitosans-bold-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-nunito_sans);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.poppins-medium-white-26px {
+  color: var(--white-2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.nunitosans-bold-white-42px {
+  color: var(--white);
+  font-family: var(--font-family-nunito_sans);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 700;
+}
