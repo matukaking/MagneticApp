@@ -5,44 +5,37 @@ import SetLocation from "./SetLocation";
 import SetAlbumName from "./SetAlbumName";
 
 function Form() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
+  const [formData, setFormData] = useState({
+    albumName: "",
+    location: "",
+  });
 
   const FormTitles = [
     "Welcome",
-    "Lets create your album!",
+    "Let's create your album!",
     "Where have you been?",
     "Upload your photos and videos of your trip",
   ];
 
-  //amelyik page vagyunk azt jeleniti meg a body tagbe, mert ott hivjuk meg ezt a fuggvenyt
+  // amelyik page vagyunk azt jeleniti meg a body tagbe, mert ott hivjuk meg ezt a fuggvenyt
   const PageDisplay = () => {
     if (page === 0) {
       return <Welcome />;
     } else if (page === 1) {
-      return <SetAlbumName />;
+      return <SetAlbumName formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
-      return <SetLocation />;
+      return <SetLocation formData={formData} setFormData={setFormData} />;
     } else {
       return <SetAlbum />;
     }
   };
 
+  const showPrevButton = page > 0;
+  const showNextButton = page < FormTitles.length - 1;
+
   return (
     <div className="form">
-      <div className="progressbar">
-        <div
-          style={{
-            width:
-              page === 0
-                ? "25%"
-                : page == 1
-                ? "50%"
-                : page == 2
-                ? "75%"
-                : "100%",
-          }}
-        ></div>
-      </div>
       <div className="form-container">
         <div className="header">
           <h1>{FormTitles[page]}</h1>
@@ -50,22 +43,25 @@ function Form() {
         <div className="body">{PageDisplay()}</div>
 
         <div className="footer">
-          <button
-            disabled={page === 0} //megakadalyooza h ne tudjon ranyomni ha az első elemnél vagyunk
-            onClick={() => {
-              setPage((currPage) => currPage - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            disabled={page === FormTitles.length - 1} //megakadalyooza h ne tudjon ranyomni ha az utolso elemnél vagyunk
-            onClick={() => {
-              setPage((currPage) => currPage + 1);
-            }}
-          >
-            Next
-          </button>
+          {showPrevButton && (
+            <button
+              onClick={() => {
+                setPage((currPage) => currPage - 1);
+              }}
+            >
+              Prev
+            </button>
+          )}
+
+          {showNextButton && (
+            <button
+              onClick={() => {
+                setPage((currPage) => currPage + 1);
+              }}
+            >
+              {page === 0 ? "Start" : "Next"}
+            </button>
+          )}
         </div>
       </div>
     </div>

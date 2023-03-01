@@ -1,9 +1,16 @@
 import React from "react";
 
-function SetLocation() {
+function SetLocation({ formData, setFormData }) {
   return (
     <div className="set-location-container">
-      <input type="text" placeholder="Location"></input>
+      <input
+        type="text"
+        placeholder="Location"
+        value={formData.location}
+        onChange={(event) =>
+          setFormData({ ...formData, location: event.target.value })
+        }
+      ></input>
     </div>
   );
 }

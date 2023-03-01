@@ -1,13 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .App {
-  background: rgb(255, 0, 228);
-  background: radial-gradient(
-    circle,
-    rgba(255, 0, 228, 1) 0%,
-    rgba(212, 51, 16, 1) 84%,
-    rgba(255, 0, 95, 1) 100%
-  );
+  background: linear-gradient(to bottom, #ff416c, #4a00e0);
+
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -29,45 +24,51 @@ body {
   align-items: center;
 }
 
+h1 {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
 .form-container {
-  width: 400px;
-  height: 400px;
-  background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
+  width: 80%;
 }
 
 .form-container .header {
   flex: 20%;
   display: grid;
   place-items: center;
+  margin: 40px 40px 0px 40px;
 }
 
 .form-container .body {
   flex: 60%;
+  margin-bottom: 60px;
 }
 
 .form-container .footer {
   flex: 20%;
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
 
 .form-container .footer button {
-  border-radius: 7px;
+  border-radius: 20px;
   width: 100px;
   height: 40px;
-  background-color: rgb(255, 0, 140);
+  background-color: rgb(255, 255, 255);
+  color: rgb(96, 0, 252);
   font-weight: bold;
-  color: white;
   border: 0 none;
-  border-radius: 1px;
   cursor: pointer;
   padding: 10px 5px;
   margin: 10px 5px;
-  margin: 5px;
+  box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
 }
 
 .sign-up-container {
@@ -85,6 +86,19 @@ body {
   height: 40px;
   padding-left: 5px;
   font-size: 20px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  color: white;
+}
+.sign-up-container input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+}
+.sign-up-container input::placeholder {
+  color: rgb(182, 182, 182);
 }
 
 .set-location-container {
@@ -97,32 +111,76 @@ body {
 }
 
 .set-location-container input {
-  margin: 5px;
   width: 200px;
   height: 40px;
   padding-left: 5px;
   font-size: 20px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  color: white;
 }
 
-/* PROGRESS BAR */
-.progressbar {
-  width: 400px;
-  height: 10px;
-  background-color: white;
-  margin-bottom: 50px;
+.set-location-container input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
 }
 
-.progressbar div {
-  width: 33.3%;
+.set-location-container input::placeholder {
+  color: rgb(182, 182, 182);
+}
+
+.image-wrapper {
+  position: relative;
+  height: 0;
+  padding-bottom: 100%; /* 1:1 aspect ratio */
+}
+
+.image-wrapper > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
-  background-color: rgb(98, 0, 255);
+  object-fit: cover; /* fill the container without stretching */
+  border-radius: 20px;
 }
 
-input {
-  border: 2px solid rgb(98, 0, 255);
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  border: 2px solid #ccc;
   border-radius: 5px;
+  cursor: pointer;
+  width: 50%;
+  margin: auto;
 }
 
-input:focus {
-  border: 3px solid rgb(98, 0, 255);
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.upload-text {
+  font-size: 1.2rem;
+}
+
+.upload-subtext {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+label {
+  background-color: rgb(0, 0, 0, 0);
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }

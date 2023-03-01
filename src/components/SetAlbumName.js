@@ -1,9 +1,17 @@
 import React from "react";
 
-function SetAlbumName() {
+function SetAlbumName({ formData, setFormData }) {
   return (
     <div className="sign-up-container">
-      <input type="text" placeholder="Album name"></input>
+      <input
+        className="inputBox"
+        type="text"
+        placeholder="Album name"
+        value={formData.albumName}
+        onChange={(event) =>
+          setFormData({ ...formData, albumName: event.target.value })
+        }
+      ></input>
     </div>
   );
 }
