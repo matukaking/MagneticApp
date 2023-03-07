@@ -17,8 +17,8 @@ var config = {
   authentication: {
     type: "default",
     options: {
-      userName: "matukityoadmin", //update me
-      password: "MatuKityo2023?!", //update me
+      userName: "", //update me
+      password: "?!", //update me
     },
   },
   options: {
