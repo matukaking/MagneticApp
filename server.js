@@ -13,7 +13,7 @@ app.get("/home", (req, res) => {
 });
 // Configuration object for connecting to the database
 var config = {
-  server: "magnetickiszolgalo.database.windows.net", //update me
+  server: "", //update me
   authentication: {
     type: "default",
     options: {
